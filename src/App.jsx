@@ -1,11 +1,11 @@
-import { CarInfoProvider } from "./context/CarProvider";
+import Providers from "./context/Providers";
 import AppRouter from "./routes/AppRouter";
 
 function App() {
   return (
-    <CarInfoProvider>
+    <Providers>
       <AppRouter />
-    </CarInfoProvider>
+    </Providers>
   );
 }
 
