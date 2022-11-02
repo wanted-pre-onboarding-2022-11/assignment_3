@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import { getCar } from "../api/index";
 
 export const CarListContext = createContext({
@@ -17,6 +17,7 @@ export const CarListContext = createContext({
 });
 
 export const CarListContextProvider = ({ children }) => {
+  const [carList, setCarList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selected, setSelected] = useState("");
   const [isFetch, setIsFetch] = useState([
@@ -42,14 +43,22 @@ export const CarListContextProvider = ({ children }) => {
     setSelected(query);
   };
 
-  const handleCarData = async () => {
-    const response = await getCar(selected);
-    setIsLoading(false);
-    return response;
-  };
+  const handleCarData = useCallback(async () => {
+    try {
+      const response = await getCar(selected);
+      setCarList(response);
+      setIsLoading(false);
+    } catch (e) {
+      throw new Error(e);
+    }
+  }, [selected, setCarList]);
+
+  useEffect(() => {
+    handleCarData();
+  }, [handleCarData]);
 
   return (
-    <CarListContext.Provider value={{ isLoading, isFetch, handleCarType, handleCarData }}>
+    <CarListContext.Provider value={{ carList, isLoading, isFetch, handleCarType }}>
       {children}
     </CarListContext.Provider>
   );
