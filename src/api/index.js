@@ -14,7 +14,7 @@ instance.interceptors.request.use(
   },
 );
 
-export const getAllType = async () => {
-  const response = await instance.get("");
+export const getCar = async (query) => {
+  const response = await instance.get("", { params: { segment: query } });
   return response.data.payload;
 };
