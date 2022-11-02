@@ -1,6 +1,6 @@
 import axios from "axios";
 const instance = axios.create({
-  baseURL: "https://preonboarding.platdev.net/api/cars",
+  baseURL: process.env.REACT_APP_BASE_URL,
   timeout: 4000,
 });
 
