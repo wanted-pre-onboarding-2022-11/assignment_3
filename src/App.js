@@ -1,9 +1,8 @@
-//import carApi from "./apis/car";
+import carApi from "./apis/car";
 
 function App() {
   const handleClick = async () => {
-    //const res = await carApi.getCars();
-    //console.log(res);
+    await carApi.getCars();
   };
   return (
     <button type="button" onClick={handleClick}>
