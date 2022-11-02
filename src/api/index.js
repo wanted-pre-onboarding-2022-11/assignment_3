@@ -16,5 +16,5 @@ instance.interceptors.request.use(
 
 export const getAllType = async () => {
   const response = await instance.get("");
-  return response.data;
+  return response.data.payload;
 };
