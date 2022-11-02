@@ -1,4 +1,4 @@
-import { CarInfoProvider } from "./contest/CarProvider";
+import { CarInfoProvider } from "./context/CarProvider";
 import AppRouter from "./routes/AppRouter";
 
 function App() {
