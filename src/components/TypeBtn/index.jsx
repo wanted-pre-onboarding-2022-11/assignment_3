@@ -2,7 +2,7 @@ import React from "react";
 import { DefaultBtn, ActiveBtn } from "./TypeBtn.styled";
 
 function TypeBtn({ text, isActive }) {
-  return <>{!isActive ? <DefaultBtn>{text}</DefaultBtn> : <ActiveBtn>{text}</ActiveBtn>}</>;
+  return <div>{!isActive ? <DefaultBtn>{text}</DefaultBtn> : <ActiveBtn>{text}</ActiveBtn>}</div>;
 }
 
 export default TypeBtn;
