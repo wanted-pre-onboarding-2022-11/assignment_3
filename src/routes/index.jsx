@@ -10,7 +10,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route index path={ROUTER_PATH.BASE} element={<CarList />} />
-        <Route index path={`${ROUTER_PATH.DETAIL}/id`} element={<CarDetail />} />
+        <Route index path={`${ROUTER_PATH.DETAIL}/:id`} element={<CarDetail />} />
         <Route index path={ROUTER_PATH.NOTFOUND} element={<NotFound />} />
       </Routes>
     </BrowserRouter>
