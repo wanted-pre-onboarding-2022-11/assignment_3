@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "../../node_modules/react-router-dom/dist/index";
-import Home from "@/pages/CarList/index";
+import Home from "@/pages/Home/index";
 import { ROUTER_PATH } from "./rotuerPath";
 import CarDetail from "@/pages/CarDetail/index";
 import NotFound from "@/pages/NotFound/index";
