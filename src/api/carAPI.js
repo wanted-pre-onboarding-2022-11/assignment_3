@@ -3,7 +3,7 @@ import { createInstance } from "./createInstance";
 
 const BASE_URL = "https://preonboarding.platdev.net/api";
 
-class carInstance {
+class carAPI {
   #API;
   #instance;
   #fuelType;
@@ -66,4 +66,4 @@ class carInstance {
   }
 }
 
-export default new carInstance();
+export default new carAPI();
