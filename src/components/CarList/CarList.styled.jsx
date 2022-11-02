@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   width: 100%;
-  padding: 20px;
 `;
 
 export const SBox = styled.section`
@@ -10,4 +9,5 @@ export const SBox = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 600;
 `;
