@@ -1,4 +1,4 @@
-import { createContext, useCallback, useState } from "react";
+import { createContext, useState } from "react";
 import { getCar } from "../api/index";
 
 export const CarListContext = createContext({
@@ -9,31 +9,25 @@ export const CarListContext = createContext({
     { text: "대형", isActive: false, query: "E" },
     { text: "중형", isActive: false, query: "D" },
     { text: "소형", isActive: false, query: "C" },
+    { text: "SUV", isActive: false, query: "SUV" },
   ],
+  selected: "",
   handleCarType: () => {},
   handleCarData: () => {},
 });
 
 export const CarListContextProvider = ({ children }) => {
-  const [carList, setCarList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selected, setSelected] = useState("");
   const [isFetch, setIsFetch] = useState([
     { text: "전체", isActive: true, query: "" },
     { text: "대형", isActive: false, query: "E" },
     { text: "중형", isActive: false, query: "D" },
     { text: "소형", isActive: false, query: "C" },
+    { text: "SUV", isActive: false, query: "SUV" },
   ]);
 
-  const handleCarData = async (_text) => {
-    setIsLoading(true);
-    const [{ query }] = isFetch.filter((item) => item.text === _text);
-    const response = await getCar(query);
-    setCarList(response);
-    setIsLoading(false);
-  };
-
   const handleCarType = (text) => {
-    handleCarData(text);
     setIsFetch((prev) =>
       prev.map((item) => {
         if (item.text !== text) {
@@ -44,10 +38,18 @@ export const CarListContextProvider = ({ children }) => {
         return item;
       }),
     );
+    const [{ query }] = isFetch.filter((car) => car.text === text);
+    setSelected(query);
+  };
+
+  const handleCarData = async () => {
+    const response = await getCar(selected);
+    setIsLoading(false);
+    return response;
   };
 
   return (
-    <CarListContext.Provider value={{ carList, isLoading, isFetch, handleCarType, handleCarData }}>
+    <CarListContext.Provider value={{ isLoading, isFetch, handleCarType, handleCarData }}>
       {children}
     </CarListContext.Provider>
   );
