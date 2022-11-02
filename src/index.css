@@ -2,13 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #444;
+  color: #000;
 }
 
 a {
   display: block;
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  display: block;
+  background-color: none;
+  border: none;
 }
 
 body {
