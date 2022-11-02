@@ -7,6 +7,7 @@ export const Container = styled.section`
   display: flex;
   flex-wrap: nowrap;
   border-bottom: 1px solid #000;
+  align-items: flex-end;
 
   &::-webkit-scrollbar {
     height: 2px;

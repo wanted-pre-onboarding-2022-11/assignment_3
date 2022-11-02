@@ -6,6 +6,7 @@ export const DefaultBtn = styled.button`
   border-radius: 18px;
   background-color: #d9d9d9;
   font-weight: 600;
+  height: 28px;
 `;
 
 export const ActiveBtn = styled.button`
@@ -14,4 +15,5 @@ export const ActiveBtn = styled.button`
   border-radius: 18px;
   background-color: #000;
   color: #fff;
+  height: 28px;
 `;
