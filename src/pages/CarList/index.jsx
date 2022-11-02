@@ -7,7 +7,6 @@ function CarList() {
     <>
       <Header title="전체차량" isBackBtn={false} />
       <TypeBtnList />
-      CarList
     </>
   );
 }
