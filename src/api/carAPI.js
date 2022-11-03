@@ -55,13 +55,10 @@ class carAPI {
   }
 
   async getMediumCars() {
-    console.log(this.#segment.medium);
     return this.getSegmentCars({ segment: this.#segment.medium });
   }
 
   async getLargeCars() {
-    console.log(this.#segment.large);
-
     return this.getSegmentCars({ segment: this.#segment.large });
   }
 

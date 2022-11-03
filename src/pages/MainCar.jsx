@@ -1,10 +1,30 @@
-import React from "react";
-import { useCarInfo } from "../contest/CarProvider";
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import Category from "../components/Category";
+import CarHeader from "../components/CarHeader";
+import CarList from "../components/CarList";
+import { useCarInfo, useCarInfoActions } from "../context/CarProvider";
 
 const CarMain = () => {
-  const carInfo = useCarInfo();
+  const { carInfo, isLoading } = useCarInfo();
 
-  return <div>Main!!!!!!!</div>;
+  const { getAllCar, setAllCar } = useCarInfoActions();
+
+  useEffect(() => {
+    getAllCar();
+  }, [getAllCar]);
+
+  return (
+    <S.CarContainer>
+      <CarHeader />
+      <Category setAllCar={setAllCar} />
+      <CarList carInfo={carInfo} isLoading={isLoading} />
+    </S.CarContainer>
+  );
 };
 
 export default CarMain;
+
+const S = {
+  CarContainer: styled.div``,
+};
