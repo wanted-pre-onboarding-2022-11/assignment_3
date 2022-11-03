@@ -7,6 +7,7 @@ const CarImage = ({ car }) => {
 
 const ImageStyled = styled.img`
   height: 205px;
+  width: 100%;
   background-color: #d9d9d9; ;
 `;
 export default CarImage;
