@@ -4,6 +4,7 @@ import { useParams } from "../../../node_modules/react-router-dom/dist/index";
 import { CarListContext } from "../../context/CarContext";
 import { Image, Container, Title, Price, Section, Des, SBox } from "./CarDetail.styled";
 import { convertDay } from "../../utils/index";
+import { Helmet } from "react-helmet";
 
 function CarDetail() {
   const { id } = useParams();
@@ -11,6 +12,16 @@ function CarDetail() {
   const [carDetail] = carList.filter((item) => item.id === +id);
   return (
     <>
+      <Helmet
+        meta={[
+          {
+            property: "og:title",
+            content: `${carDetail.attribute.brand} / ${carDetail.attribute.name}`,
+          },
+          { property: "og:description", content: `${carDetail.amount}` },
+          { property: "og:image", content: `${carDetail.attribute.imageUrl}` },
+        ]}
+      />
       {!carDetail ? (
         <>
           <Header title="차량상세" isBackBtn={true} />
