@@ -1,17 +1,25 @@
 import styled from "styled-components";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import CarItem from "./CarItem";
 import carApi from "../apis/car";
 import usePromise from "../hooks/usePromise";
 import { useMemo } from "react";
+import { useCar } from "@/contexts/carContext";
 
 const CarList = () => {
+  const { setCar } = useCar();
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const fuelType = useMemo(() => searchParams.get("fuelType"), [searchParams]);
   const segment = useMemo(() => searchParams.get("segment"), [searchParams]);
   const query = {
     fuelType,
     segment,
+  };
+
+  const handleClickCarList = (car) => {
+    setCar(car);
+    navigate("detail");
   };
 
   const [loading, cars, error] = usePromise(() => {
@@ -33,7 +41,7 @@ const CarList = () => {
   return (
     <>
       {cars.map((car) => (
-        <CarItem key={car.id} car={car} />
+        <CarItem key={car.id} car={car} onClick={handleClickCarList.bind(this, car)} />
       ))}
     </>
   );

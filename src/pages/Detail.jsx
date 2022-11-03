@@ -1,13 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import Header from "../components/Header";
+import { useCar } from "@/contexts/carContext";
 
 const Detail = () => {
-  const { id } = useParams();
+  const { car } = useCar();
+  //console.log(car);
   return (
     <>
       <Header title="차량상세" hasBack />
-      {id}
+      {car.attribute.name}
     </>
   );
 };

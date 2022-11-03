@@ -1,10 +1,13 @@
 import Layout from "./components/Layout";
+import { CarContextProvider } from "./contexts/carContext";
 import Router from "./routes";
 
 function App() {
   return (
     <Layout>
-      <Router />
+      <CarContextProvider>
+        <Router />
+      </CarContextProvider>
     </Layout>
   );
 }

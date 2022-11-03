@@ -3,9 +3,9 @@ import { COLOR_PALETTE, FONT_SIZE } from "@/styles/constants";
 import { formattedFuelType, formatNumber, formattedSegment } from "@/utils";
 import styled from "styled-components";
 
-const CarItem = ({ car }) => {
+const CarItem = ({ car, onClick }) => {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <CarInfo>
         <CarInfoTitle>
           <h3>{car.attribute.brand}</h3>
