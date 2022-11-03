@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "../../../node_modules/react-router-dom/dist/index";
 import { convertName } from "@utils/convertValue";
 import { CarItemContainer, LeftItem, RightItem } from "./CarItem.styled";
-import { convertFuel } from "../../utils/convertValue";
+import { convertFuel, convertMoneyString } from "../../utils/convertValue";
 
 const CarItem = ({ id, brand, name, segment, fuelType, imageUrl, amount }) => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const CarItem = ({ id, brand, name, segment, fuelType, imageUrl, amount }) => {
             <span> / </span>
             <span>{convertFuel(fuelType)}</span>
           </p>
-          <p>월 {amount} 원 부터</p>
+          <p>월 {convertMoneyString(amount)} 원 부터</p>
         </div>
       </LeftItem>
       <RightItem image={imageUrl} />

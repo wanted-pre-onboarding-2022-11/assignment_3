@@ -50,3 +50,9 @@ export const convertDate = (date) => {
 
   return result;
 };
+
+export const convertMoneyString = (target) => {
+  const result = target.toLocaleString("ko-KR");
+
+  return result;
+};

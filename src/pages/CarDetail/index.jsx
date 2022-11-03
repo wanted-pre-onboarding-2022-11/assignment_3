@@ -9,7 +9,12 @@ import {
   CarTitle,
   CarContent,
 } from "./CarDetail.styled";
-import { convertFuel, convertName, convertDate } from "../../utils/convertValue";
+import {
+  convertFuel,
+  convertName,
+  convertDate,
+  convertMoneyString,
+} from "../../utils/convertValue";
 
 const CarDetail = () => {
   const { carDataList, isLoading } = useContext(CarDataListContext);
@@ -24,7 +29,7 @@ const CarDetail = () => {
       <CarHeader>
         <p>{carData.attribute.brand}</p>
         <p>{carData.attribute.name}</p>
-        <p>{carData.amount}</p>
+        <p>월 {convertMoneyString(carData.amount)} 원</p>
       </CarHeader>
       <CarTitle>차량 정보</CarTitle>
       <CarContent>
