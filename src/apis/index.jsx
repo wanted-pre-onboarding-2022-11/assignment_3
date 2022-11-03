@@ -1,18 +1,12 @@
 import axios from "../../node_modules/axios/index";
 
 const instance = axios.create({
-  baseURL: "https://preonboarding.platdev.net",
+  baseURL: "https://preonboarding.platdev.net/api/cars",
   timeout: 2000,
 });
 
-export const getAllCarData = async () => {
-  let res = await instance.get(`/api/cars`);
-
-  return res.data.payload;
-};
-
 export const getCarData = async (selectedMenu) => {
-  let res = await instance.get(`api/cars?segment=${selectedMenu}`);
+  const res = await instance.get(``, { params: { segment: selectedMenu } });
 
   return res.data.payload;
 };
