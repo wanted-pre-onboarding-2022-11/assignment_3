@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "../../../node_modules/react-router-dom/dist/index";
-import { Container, Title, Info, Image } from "./CarListItem.styled";
+import { convertNewItem } from "../../utils/index";
+import { Container, Title, Info, Image, New } from "./CarListItem.styled";
 function CarListItem({ car }) {
   return (
     <Link to={`/detail/${car.id}`}>
       <Container>
         <div>
+          {convertNewItem(car.createdAt) && <New>신규</New>}
           <Title>
             {car.attribute.brand}
             <br />

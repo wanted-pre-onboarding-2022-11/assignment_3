@@ -7,6 +7,19 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #000;
+  position: relative;
+`;
+
+export const New = styled.div`
+  position: absolute;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 15px;
+  padding: 4px 15px;
+  background-color: #0094ff;
+  top: 7px;
+  right: 7px;
 `;
 
 export const Title = styled.div`
