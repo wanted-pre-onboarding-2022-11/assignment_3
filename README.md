@@ -1,6 +1,6 @@
 # 원티드 프리온보딩 프론트엔드 11조
 
-### [배포 사이트 바로가기](https://test.oscar0421.com/) 👈🏻 click!
+### [배포 사이트 바로가기](https://funny-entremet-14723c.netlify.app/) 👈🏻 click!
 
 1. [팀 소개](#팀-소개)
    - 팀원 소개
