@@ -33,9 +33,6 @@
       <img src="https://avatars.githubusercontent.com/u/64957267?v=4" width="100px;" alt="용상윤"/>
     </td>
     <td align="center">
-      <img src="https://avatars.githubusercontent.com/u/93130161?v=4" width="100px;" alt="이현지"/>
-    </td>
-    <td align="center">
       <img src="https://avatars.githubusercontent.com/u/80934175?v=4" width="100px;" alt="박채연"/>
     </td>
     <td align="center">
@@ -64,11 +61,6 @@
     <td align="center">
       <a href="https://github.com/ryong9rrr">
         <div>용상윤(팀장)</div>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/HyunziLee">
-        <div>이현지</div>
       </a>
     </td>
     <td align="center">
