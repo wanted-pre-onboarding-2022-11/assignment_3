@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { getAllCarData, getCarData } from "@apis";
+import { getCarData } from "@apis";
 import { FilterListContext } from "./FilterListContext";
-import { convertSegment } from "../utils/convertName";
+import { convertSegment } from "@utils/convertValue";
 
 export const CarDataListContext = React.createContext({
   carDataList: [],
@@ -15,9 +15,9 @@ export const CarDataListContextProvider = ({ children }) => {
   useEffect(() => {
     const handleCarDataList = async () => {
       const segment = convertSegment(selectedMenu);
+
       setIsLoading(true);
-      if (segment === "All") setCarDataList(await getAllCarData());
-      else setCarDataList(await getCarData(segment));
+      setCarDataList(await getCarData(segment === "All" ? "" : segment));
       setIsLoading(false);
     };
 
