@@ -60,7 +60,7 @@ const CarDetail = () => {
         {carData.additionalProducts.map((e) => (
           <div key={e.name}>
             <p>{e.name}</p>
-            <p>{e.amount}</p>
+            <p>월 {convertMoneyString(e.amount)} 원</p>
           </div>
         ))}
       </CarContent>
