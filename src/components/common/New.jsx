@@ -17,7 +17,7 @@ const S = {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(0%, -50%);
+    transform: translate(20%, -50%);
     padding: 0.4rem 0.3rem;
   `,
 };

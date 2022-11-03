@@ -26,14 +26,7 @@ const CarItem = ({ brand, name, segment, fuelType, amount, imageUrl, createdAt }
 };
 
 const S = {
-  arImgDiv: styled.div`
-    width: 200px;
-    img {
-      max-width: 200px;
-      width: 100%;
-    }
-  `,
-  CarItemContainer: styled.div`
+  CarItemContainer: styled.li`
     width: 100%;
     height: 120px;
     color: ${({ theme }) => theme.black};
@@ -41,8 +34,22 @@ const S = {
     padding: 1.25em 1.55em;
     display: flex;
     justify-content: space-between;
+    font-size: 1.2rem;
   `,
-  CarInfo: styled.div``,
+  CarInfo: styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: inherit;
+    strong {
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+    > :nth-child(2) {
+      margin-bottom: 0.8rem;
+    }
+  `,
+
   CarImg: styled.div`
     position: relative;
     width: 20rem;
