@@ -14,3 +14,7 @@ export const carModel = {
 export const getCarSegment = () => {
   return Object.values(carModel.segment);
 };
+
+export const getCarFuelType = () => {
+  return Object.values(carModel.fuelType);
+};

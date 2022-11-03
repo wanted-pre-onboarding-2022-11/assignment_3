@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Category from "../components/Category";
-import CarHeader from "../components/CarHeader";
-import CarList from "../components/CarList";
+import Category from "../components/CarMain.jsx/Category";
+import CarHeader from "../components/CarMain.jsx/CarHeader";
+import CarList from "../components/CarMain.jsx/CarList";
 import { useCarInfo, useCarInfoActions } from "../context/CarProvider";
 
 const CarMain = () => {

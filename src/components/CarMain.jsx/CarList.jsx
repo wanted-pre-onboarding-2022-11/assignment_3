@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "../../node_modules/react-router-dom/dist/index";
+import { Link } from "../../../node_modules/react-router-dom/dist/index";
 import CarItem from "./CarItem";
-import Message from "./common/Message";
+import Message from "../common/Message";
 
 const CarList = ({ carInfo, isLoading }) => {
   if (isLoading) return <Message message="불러오는 중" />;
@@ -18,7 +18,7 @@ const CarList = ({ carInfo, isLoading }) => {
             attribute: { brand, name, segment, fuelType, imageUrl },
           } = car;
           return (
-            <Link key={car.id} to={`detail/${id}`}>
+            <Link key={car.id} to={`detail/${id}`} state={{ state: car }}>
               <CarItem
                 brand={brand}
                 name={name}

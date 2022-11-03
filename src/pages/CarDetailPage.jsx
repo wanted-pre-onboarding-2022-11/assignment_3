@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import CarHeader from "../components/CarHeader";
+import CarDetail from "../components/CarDetail/CarDetail";
+import CarDetailHeader from "../components/CarDetail/CarDetailHeader";
 
-const CarDetail = () => {
+const CarDetailPage = () => {
   return (
     <S.DetailContainer>
-      <CarHeader />
+      <CarDetailHeader />
       <CarDetail />
     </S.DetailContainer>
   );
@@ -15,4 +16,4 @@ const S = {
   DetailContainer: styled.div``,
 };
 
-export default CarDetail;
+export default CarDetailPage;

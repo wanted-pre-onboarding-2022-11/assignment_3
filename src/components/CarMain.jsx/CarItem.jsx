@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { carModel } from "../utils/carModel";
-import New from "./common/New";
+import { carModel } from "../../utils/carModel";
+import New from "../common/New";
 
 const inDay = (date) => {
   const today = new Date();

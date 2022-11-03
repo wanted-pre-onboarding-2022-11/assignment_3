@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { useTags } from "../hooks/useTags";
-import Tag from "./common/Tag";
+import { useTags } from "../../hooks/useTags";
+import Tag from "../common/Tag";
 
 const Category = ({ setAllCar }) => {
   const { tags, handleClick } = useTags(setAllCar);
