@@ -1,5 +1,7 @@
+import Router from "@/routes/index";
+
 function App() {
-  return <h1>Hello React!</h1>;
+  return <Router />;
 }
 
 export default App;
