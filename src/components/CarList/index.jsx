@@ -10,10 +10,10 @@ function CarList() {
     <Container>
       {isLoading ? (
         <SBox>불러오는 중</SBox>
-      ) : carList.length === 0 ? (
+      ) : carList?.length === 0 ? (
         <SBox>차량이 없습니다.</SBox>
       ) : (
-        carList.map((car) => <CarListItem key={car.id} car={car} />)
+        carList?.map((car) => <CarListItem key={car.id} car={car} />)
       )}
     </Container>
   );
