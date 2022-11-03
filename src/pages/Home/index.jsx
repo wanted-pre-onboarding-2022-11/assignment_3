@@ -1,24 +1,28 @@
 import React, { useContext } from "react";
-import { useNavigate } from "../../../node_modules/react-router-dom/dist/index";
+import { CarItem, Notification } from "@components/index";
 import { CarDataListContext } from "../../contexts/CarDataListContext";
 
 const Home = () => {
   const { carDataList, isLoading } = useContext(CarDataListContext);
-  const navigate = useNavigate();
-  const handleTargetPage = (target) => {
-    navigate(`/detail/${target}`);
-  };
 
-  if (isLoading) return <div>로딩중...</div>;
+  if (isLoading) return <Notification>불러오는 중</Notification>;
 
   return (
-    <div>
+    <>
       {carDataList.map((e) => (
-        <div key={e.id}>
-          <button onClick={() => handleTargetPage(e.id)}>{e.attribute.name}</button>
-        </div>
+        <CarItem
+          key={e.id}
+          id={e.id}
+          brand={e.attribute.brand}
+          name={e.attribute.name}
+          segment={e.attribute.segment}
+          fuelType={e.attribute.fuelType}
+          imageUrl={e.attribute.imageUrl}
+          amount={e.amount}
+        />
       ))}
-    </div>
+      {!carDataList.length && <Notification>차량이 없습니다.</Notification>}
+    </>
   );
 };
 
