@@ -1,13 +1,11 @@
-import carApi from "./apis/car";
+import Layout from "./components/Layout";
+import Router from "./routes";
 
 function App() {
-  const handleClick = async () => {
-    await carApi.getCars();
-  };
   return (
-    <button type="button" onClick={handleClick}>
-      모든 차 불러오기
-    </button>
+    <Layout>
+      <Router />
+    </Layout>
   );
 }
 
