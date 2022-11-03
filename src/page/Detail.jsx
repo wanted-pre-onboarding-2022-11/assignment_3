@@ -6,16 +6,21 @@ import Insurance from "../component/detail/Insurance";
 import Top from "../component/detail/Top";
 import React from "react";
 import styled from "styled-components";
+import { useLocation } from "../../node_modules/react-router-dom/dist/index";
 
 const Detail = () => {
+  const location = useLocation();
+  const car = location.state.car;
+  console.log(car);
+
   return (
     <Container>
       <Top />
-      <CarImage />
-      <CarName />
-      <CarDesc />
-      <Insurance />
-      <AdditionalProducts />
+      <CarImage car={car} />
+      <CarName car={car} />
+      <CarDesc car={car} />
+      <Insurance car={car} />
+      <AdditionalProducts car={car} />
     </Container>
   );
 };
