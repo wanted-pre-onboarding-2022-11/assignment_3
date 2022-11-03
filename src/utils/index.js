@@ -6,3 +6,10 @@ export const convertDay = (date) => {
   const weeks = WEEKDAY[newDate.getDay()];
   return `${month}월 ${day}일 (${weeks}) 부터`;
 };
+
+export const convertNewItem = (date) => {
+  const today = new Date();
+  const yesterday = new Date(today.setDate(today.getDate() - 1));
+  const newDate = new Date(date);
+  return +yesterday < +newDate ? true : false;
+};
