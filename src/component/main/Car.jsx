@@ -10,7 +10,7 @@ const Car = ({ car }) => {
   return (
     <Container
       onClick={() => {
-        navigate(`/detail/:${car.id}`);
+        navigate(`/detail/:${car.id}`, { state: { car: car } });
       }}
     >
       <ContentDiv>
