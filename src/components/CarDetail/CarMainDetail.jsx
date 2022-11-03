@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { formatAmout } from "../../utils/formatAmount";
 
 const CarMainDetail = ({ brand, name, amount }) => {
   return (
     <S.MainDetail>
       <strong>{brand}</strong>
       <strong>{name}</strong>
-      <p>월 {amount} 원</p>
+      <S.AmountContainer>
+        <p>월 {formatAmout(amount)} 원</p>
+      </S.AmountContainer>
     </S.MainDetail>
   );
 };
@@ -17,6 +20,7 @@ const S = {
     flex-direction: column;
     gap: 0.2rem;
     font-size: inherit;
+    padding: 2rem;
     strong {
       font-weight: 700;
       font-size: 1.4rem;
@@ -24,6 +28,12 @@ const S = {
     > :nth-child(2) {
       margin-bottom: 0.8rem;
     }
+  `,
+
+  AmountContainer: styled.span`
+    text-align: right;
+    font-weight: 400;
+    font-size: 1.7rem;
   `,
 };
 

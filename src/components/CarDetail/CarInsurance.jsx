@@ -1,19 +1,16 @@
 import React from "react";
+import DetailInfo from "../common/DetailInfo";
+import SubHeader from "../common/SubHeader";
 
 const CarInsurance = ({ insurance }) => {
   return (
     <div>
-      <h3>보험</h3>
+      <SubHeader title="보험" />
       <div>
         {insurance &&
           insurance.map((element) => {
             const { name, description } = element;
-            return (
-              <span key={name}>
-                <strong>{name}</strong>
-                <strong>{description}</strong>
-              </span>
-            );
+            return <DetailInfo key={name} name={name} description={description} />;
           })}
       </div>
     </div>

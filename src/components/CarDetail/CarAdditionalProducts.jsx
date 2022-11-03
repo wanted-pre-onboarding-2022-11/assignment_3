@@ -1,18 +1,18 @@
 import React from "react";
+import { formatAmout } from "../../utils/formatAmount";
+import DetailInfo from "../common/DetailInfo";
+import SubHeader from "../common/SubHeader";
 
 const CarAdditionalProducts = ({ additionalProducts }) => {
   return (
     <div>
-      <h3>추가상품</h3>
+      <SubHeader title="추가상품" />
       <div>
         {additionalProducts &&
           additionalProducts.map((element) => {
             const { name, amount } = element;
             return (
-              <span key={name}>
-                <strong>{name}</strong>
-                <strong>{amount}</strong>
-              </span>
+              <DetailInfo key={name} name={name} description={`월 ${formatAmout(amount)} 원`} />
             );
           })}
       </div>
