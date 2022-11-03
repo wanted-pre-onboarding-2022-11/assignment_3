@@ -13,7 +13,7 @@ const Detail = () => {
 
   useEffect(() => {
     handleGetCarItem(id);
-  }, [id]);
+  }, [id, handleGetCarItem]);
 
   return (
     <Layout>

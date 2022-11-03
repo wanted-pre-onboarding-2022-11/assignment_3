@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 import instance from "@apis/instance";
 
 const CarItemContext = createContext(null);
@@ -10,7 +10,7 @@ export const CarItemContextProvider = ({ children }) => {
     isError: false,
   });
 
-  const handleGetCarItem = async (id) => {
+  const handleGetCarItem = useCallback(async (id) => {
     try {
       const { data } = await instance.get("/cars");
       const [carItem] = data.payload.filter((item) => item.id === +id);
@@ -18,7 +18,7 @@ export const CarItemContextProvider = ({ children }) => {
     } catch (error) {
       setCarItem((prev) => ({ ...prev, isLoading: false, isError: true }));
     }
-  };
+  }, []);
 
   return (
     <CarItemContext.Provider value={{ carItem, handleGetCarItem }}>
