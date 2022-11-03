@@ -10,7 +10,7 @@ export default Layout;
 const Container = styled.div`
   max-width: 450px;
   min-width: 360px;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   margin: 0 auto;
   background-color: #fafafa;
