@@ -1,24 +1,27 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "../../../node_modules/react-router-dom/dist/index";
 
 const CarItem = ({ car }) => {
   return (
-    <Container>
-      <Box>
-        <div>
-          <b>{car.attribute.brand}</b>
-          <br />
-          <b>{car.attribute.name}</b>
-        </div>
-        <div>
+    <Link to={`detail/${car.id}`}>
+      <Container>
+        <Box>
           <div>
-            {car.attribute.segment} / {car.attribute.fuelType}
+            <b>{car.attribute.brand}</b>
+            <br />
+            <b>{car.attribute.name}</b>
           </div>
-          <div>월 {car.amount} 원 부터</div>
-        </div>
-      </Box>
-      <Image src={car.attribute.imageUrl} />
-    </Container>
+          <div>
+            <div>
+              {car.attribute.segment} / {car.attribute.fuelType}
+            </div>
+            <div>월 {car.amount} 원 부터</div>
+          </div>
+        </Box>
+        <Image src={car.attribute.imageUrl} alt={car.attribute.name} />
+      </Container>
+    </Link>
   );
 };
 export default CarItem;

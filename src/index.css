@@ -9,6 +9,12 @@ li {
   box-sizing: border-box;
 }
 
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
