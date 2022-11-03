@@ -5,6 +5,7 @@ import DetailDes from "../../components/DetailDes/index";
 import DetailTitle from "../../components/DetailTitle/index";
 import Header from "../../components/Header/index";
 import { useCars } from "../../context/CarDataListContext";
+import { newDate } from "../../utils/convertDay";
 
 const Detail = () => {
   const { carDataList } = useCars();
@@ -27,7 +28,7 @@ const Detail = () => {
       <>
         <DetailDes title="차종" des={carData.attribute.segment} />
         <DetailDes title="연료" des={carData.attribute.fuelType} />
-        <DetailDes title="이용 가능일" des={carData.startDate} />
+        <DetailDes title="이용 가능일" des={newDate(carData.startDate)} />
       </>
       <DetailTitle title="보험" />
       {carData.insurance.map((item) => (

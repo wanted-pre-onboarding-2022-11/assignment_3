@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "../../../node_modules/react-router-dom/dist/index";
+import { isNewItem } from "../../utils/convertDay";
 
 const CarItem = ({ car }) => {
   return (
     <Link to={`detail/${car.id}`}>
       <Container>
         <Box>
+          {isNewItem(car.createdAt) && <New>신규</New>}
           <div>
             <b>{car.attribute.brand}</b>
             <br />
@@ -31,6 +33,7 @@ const Container = styled.div`
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 `;
 
 const Image = styled.img`
@@ -49,4 +52,16 @@ const Box = styled.div`
   > div:last-child {
     font-size: 12px;
   }
+`;
+
+const New = styled.div`
+  position: absolute;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 15px;
+  padding: 4px 15px;
+  background-color: #0094ff;
+  top: 7px;
+  right: 7px;
 `;
