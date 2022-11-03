@@ -24,6 +24,7 @@ const Header = ({ title, hasBack = false }) => {
 export default Header;
 
 const Container = styled.header`
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: center;

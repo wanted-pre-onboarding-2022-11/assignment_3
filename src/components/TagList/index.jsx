@@ -60,4 +60,6 @@ const Container = styled.ul`
   display: flex;
   gap: 4px;
   border-bottom: 2px solid ${({ theme }) => theme.color.black};
+  width: 100%;
+  flex-wrap: nowrap;
 `;
