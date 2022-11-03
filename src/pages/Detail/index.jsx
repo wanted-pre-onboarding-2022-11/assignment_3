@@ -31,7 +31,7 @@ const Detail = () => {
       </>
       <DetailTitle title="보험" />
       {carData.insurance.map((item) => (
-        <DetailDes title={item.name} des={item.description} />
+        <DetailDes key={item.name} title={item.name} des={item.description} />
       ))}
       {carData.additionalProducts.length === 0 ? (
         <></>
@@ -40,7 +40,7 @@ const Detail = () => {
           <DetailTitle title="추가상품" />
           <>
             {carData.additionalProducts.map((item) => {
-              return <DetailDes title={item.name} des={`${item.amount}원`} />;
+              return <DetailDes key={item.name} title={item.name} des={`${item.amount}원`} />;
             })}
           </>
         </>

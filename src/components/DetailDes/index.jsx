@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const DetailDes = ({ title, des }) => {
-  console.log(title, des);
   return (
     <Container>
       <b>{title}</b>
