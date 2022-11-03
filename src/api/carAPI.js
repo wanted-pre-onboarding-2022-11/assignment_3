@@ -1,4 +1,4 @@
-import { CAR_API_URL, CAR_FUELTYPE } from "./constant";
+import { CAR_API_URL, CAR_FUELTYPE, CAR_SEGMENT } from "./constant";
 import { createInstance } from "./createInstance";
 
 const BASE_URL = "https://preonboarding.platdev.net/api";
@@ -18,6 +18,7 @@ class carAPI {
     });
     this.#API = CAR_API_URL;
     this.#fuelType = CAR_FUELTYPE;
+    this.#segment = CAR_SEGMENT;
   }
 
   getAllCar() {
@@ -41,7 +42,7 @@ class carAPI {
     });
   }
 
-  getSegmentCars({ segment }) {
+  async getSegmentCars({ segment }) {
     return this.#instance.get(this.#API.cars, {
       params: {
         segment,
@@ -49,19 +50,22 @@ class carAPI {
     });
   }
 
-  getSmallCars() {
+  async getSmallCars() {
     return this.getSegmentCars({ segment: this.#segment.small });
   }
 
-  getMediumCars() {
+  async getMediumCars() {
+    console.log(this.#segment.medium);
     return this.getSegmentCars({ segment: this.#segment.medium });
   }
 
-  getLargeCars() {
+  async getLargeCars() {
+    console.log(this.#segment.large);
+
     return this.getSegmentCars({ segment: this.#segment.large });
   }
 
-  getSuvCars() {
+  async getSuvCars() {
     return this.getSegmentCars({ segment: this.#segment.suv });
   }
 }

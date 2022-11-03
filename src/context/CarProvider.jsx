@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 import carAPI from "../api/carAPI";
 
 const CarInfoValueContext = createContext(null);
@@ -22,23 +22,31 @@ const useCarInfoActions = () => {
 
 const CarInfoProvider = ({ children }) => {
   const [carInfo, setCarInfo] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const actions = useMemo(
     () => ({
       async getAllCar() {
+        setIsLoading(true);
         const {
           data: { payload },
         } = await carAPI.getAllCar();
+        setIsLoading(false);
+        setCarInfo(payload);
+      },
+      async setAllCar(fetchData) {
+        setIsLoading(true);
+        const {
+          data: { payload },
+        } = await fetchData();
+        setIsLoading(false);
         setCarInfo(payload);
       },
     }),
     [],
   );
 
-  useEffect(() => {
-    actions.getAllCar();
-  }, [actions]);
   return (
-    <CarInfoValueContext.Provider value={carInfo}>
+    <CarInfoValueContext.Provider value={{ carInfo, isLoading }}>
       <CarInfoActionContext.Provider value={actions}>{children}</CarInfoActionContext.Provider>
     </CarInfoValueContext.Provider>
   );
