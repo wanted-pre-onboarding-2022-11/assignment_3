@@ -10,7 +10,6 @@ const CarDetail = () => {
   const {
     state: {
       state: {
-        id,
         startDate,
         amount,
         attribute: { brand, name, segment, fuelType, imageUrl },
@@ -19,6 +18,7 @@ const CarDetail = () => {
       },
     },
   } = useLocation();
+
   return (
     <div>
       <S.CarImg>

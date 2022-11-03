@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { carModel } from "../../utils/carModel";
+import { formatAmout } from "../../utils/formatAmount";
 import New from "../common/New";
 
 const inDay = (date) => {
@@ -16,7 +17,7 @@ const CarItem = ({ brand, name, segment, fuelType, amount, imageUrl, createdAt }
         <strong>{brand}</strong>
         <strong>{name}</strong>
         <p>{`${segment} / ${carModel.fuelType[fuelType]}`}</p>
-        <p>월 {amount} 부터</p>
+        <p>월 {formatAmout(amount)} 부터</p>
       </S.CarInfo>
       <S.CarImg>
         {<img src={imageUrl} alt={`${name}사진`} />} {inDay(createdAt) ? <New /> : null}
