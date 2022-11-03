@@ -1,24 +1,24 @@
-import NotFound from "../pages/404";
-import CarDetail from "../pages/CarDetail";
-import CarMain from "../pages/MainCar";
+import NotFoundPage from "../pages/NotFoundPage";
+import CarDetailPage from "../pages/CarDetailPage";
+import CarMainPage from "../pages/MainCarPage";
 
 export const routePath = {
-  carMain: "/",
-  CarDetail: "detail/:id",
-  NotFound: "*",
+  carMainPage: "/",
+  carDetailPage: "detail/:id",
+  notFoundPage: "*",
 };
 
 export const routes = [
   {
-    path: routePath.carMain,
-    element: <CarMain />,
+    path: routePath.carMainPage,
+    element: <CarMainPage />,
   },
   {
-    path: routePath.CarDetail,
-    element: <CarDetail />,
+    path: routePath.carDetailPage,
+    element: <CarDetailPage />,
   },
   {
-    path: routePath.NotFound,
-    element: <NotFound />,
+    path: routePath.notFoundPage,
+    element: <NotFoundPage />,
   },
 ];
