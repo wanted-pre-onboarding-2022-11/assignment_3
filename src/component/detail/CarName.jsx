@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const CarName = () => {
+const CarName = ({ car }) => {
   return (
     <Container>
-      <div className="brand">brand</div>
-      <div className="name">name</div>
-      <div className="price"> 월원</div>
+      <div className="brand">{car.attribute.brand}</div>
+      <div className="name">{car.attribute.name}</div>
+      <div className="price">
+        월 {car.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원
+      </div>
     </Container>
   );
 };

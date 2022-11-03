@@ -1,21 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-const Insurance = () => {
+const Insurance = ({ car }) => {
   return (
     <div>
       <HeadStyled>보험</HeadStyled>
       <Container>
-        <div className="name">차종</div>
-        <div>차종</div>
+        <div className="name">대인</div>
+        <div>{car.insurance[0].description}</div>
       </Container>
       <Container>
-        <div className="name">연료</div>
-        <div>차종</div>
-      </Container>
-      <Container>
-        <div className="name">이용 가능일</div>
-        <div>차종</div>
+        <div className="name">대물</div>
+        <div>{car.insurance[1].description}</div>
       </Container>
     </div>
   );
