@@ -25,7 +25,12 @@ const S = {
       font-weight: 700;
       font-size: 1.4rem;
     }
+    > :first-child {
+      font-size: 2rem;
+    }
+
     > :nth-child(2) {
+      font-size: 2.4rem;
       margin-bottom: 0.8rem;
     }
   `,
